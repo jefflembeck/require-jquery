@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>jQuery+RequireJS Sample Page</title>
-        <!-- This is a special version of jQuery with RequireJS built-in -->
-        <script data-main="scripts/main" src="scripts/require-jquery.js"></script>
-    </head>
-    <body>
-        <h1>jQuery+RequireJS Sample Page</h1>
-        <p>Look at source or inspect the DOM to see how it works.</p>
-    </body>
+  <head>
+    <title>jQuery+RequireJS Sample Page</title>
+    <script data-main="scripts/main" src="scripts/require.js"></script>
+    <script>
+      require({
+          baseUrl: 'scripts',
+          paths: {
+            "jquery": "http://code.jquery.com/jquery-1.7.2.min",
+            "jquery-mobile": "http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min"
+          },
+          priority: ['jquery', 'jquery-mobile']
+      }, ['main']);
+    </script>
+  </head>
+  <body>
+    <h1>jQuery+RequireJS Sample Page</h1>
+    <p>Look at source or inspect the DOM to see how it works.</p>
+  </body>
 </html>
